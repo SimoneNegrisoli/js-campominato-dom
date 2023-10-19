@@ -52,7 +52,7 @@ function campoMinatoGame() {
             while (bombs.length < 16){
                 const bomb = getRndInteg(1, numSquare);
 
-                if (!bombs.includes.bomb){
+                if (!bombs.includes(bomb)){
                     bombs.push(bomb)
                 }
             }
@@ -60,14 +60,9 @@ function campoMinatoGame() {
             return bombs;
         }
 
-
-
-
-
-
     }
 
-    function createSquare(squareInd, numSquare) {
+    function createSquare(squareInd, numSquare, bombs) {
         const squareWidth = Math.sqrt(numSquare);
         const square = document.createElement('div');
         square.classList.add('square');
@@ -76,10 +71,15 @@ function campoMinatoGame() {
         square.style.height = square.style.width;
 
         square.addEventListener('click', function () {
-            square.classList.add('squarenew');
-            square.style.color = 'black';
-            console.log(`Quadratino cliccato: ${squareInd + 1}`);
-        });
+            if(bombs.includes(squareInd + 1)){
+                square.classList.add('death')
+                square.classList.innerHTML = `<i class="fa-solid fa-bomb fa-beat" style="color: #000000;"></i>`
+            } else{
+                square.classList.add('squarenew')
+                square.style.color = 'black';
+            }
+            
+        })
 
         return square;
     }
@@ -101,3 +101,7 @@ function campoMinatoGame() {
 
 
 }
+
+            // square.classList.add('squarenew');
+            // square.style.color = 'black';
+            // console.log(`Quadratino cliccato: ${squareInd + 1}`);
