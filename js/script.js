@@ -70,18 +70,37 @@ function campoMinatoGame() {
         square.style.width = `calc(100% / ${squareWidth})`;
         square.style.height = square.style.width;
 
-        square.addEventListener('click', function () {
+       
+        square.addEventListener('click', clickSquare)
+        
+        function clickSquare () {
             if (bombs.includes(squareInd + 1)) {
                 square.classList.add('death')
                 square.innerHTML = '<i class="fa-solid fa-bomb fa-beat" style="color: #000000;"></i>';
+                gameOver();
             } else {
                 square.classList.add('squarenew')
                 square.style.color = 'black';
             }
+        }
+            
 
-        })
+        
 
         return square;
+
+        function gameOver() {
+            const squares = document.querySelectorAll('.square');
+            for (let i = 0; i < squares.length; i++) {
+                squares[i].removeEventListener('click', clickSquare);
+            }
+        
+            alert('Game Over! Hai calpestato una bomba.');
+        }
+
+
+
+
     }
 
     function selectLevel(level) {
