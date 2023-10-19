@@ -33,33 +33,33 @@ function campoMinatoGame() {
         const playground = document.querySelector('.playground');
         playground.innerHTML = '';
 
-        for (let i = 0; i < numSquare; i++) {
-            const square = createSquare(i, numSquare);
-            playground.appendChild(square);
-        }
-
         // mi ritorno bombs
         const bombs = generateBombs(numSquare);
-        console.log(bombs)
-
 
         // funzione per bombe
-        function generateBombs (numSquare){
+        function generateBombs(numSquare) {
             // arrray vuoto
             const bombs = [];
 
             // ciclo while per farne una
-            while (bombs.length < 16){
+            while (bombs.length < 16) {
                 const bomb = getRndInteg(1, numSquare);
 
-                if (!bombs.includes(bomb)){
+                if (!bombs.includes(bomb)) {
                     bombs.push(bomb)
                 }
             }
-
             return bombs;
         }
 
+
+
+        for (let i = 0; i < numSquare; i++) {
+            const square = createSquare(i, numSquare,bombs);
+            playground.appendChild(square);
+        }
+
+        
     }
 
     function createSquare(squareInd, numSquare, bombs) {
@@ -71,14 +71,14 @@ function campoMinatoGame() {
         square.style.height = square.style.width;
 
         square.addEventListener('click', function () {
-            if(bombs.includes(squareInd + 1)){
+            if (bombs.includes(squareInd + 1)) {
                 square.classList.add('death')
                 square.classList.innerHTML = `<i class="fa-solid fa-bomb fa-beat" style="color: #000000;"></i>`
-            } else{
+            } else {
                 square.classList.add('squarenew')
                 square.style.color = 'black';
             }
-            
+
         })
 
         return square;
@@ -101,7 +101,3 @@ function campoMinatoGame() {
 
 
 }
-
-            // square.classList.add('squarenew');
-            // square.style.color = 'black';
-            // console.log(`Quadratino cliccato: ${squareInd + 1}`);
