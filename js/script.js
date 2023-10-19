@@ -53,12 +53,12 @@ function campoMinatoGame() {
         }
 
 
-
         for (let i = 0; i < numSquare; i++) {
             const square = createSquare(i, numSquare,bombs);
             playground.appendChild(square);
         }
 
+        console.log(bombs)
         
     }
 
@@ -73,7 +73,7 @@ function campoMinatoGame() {
         square.addEventListener('click', function () {
             if (bombs.includes(squareInd + 1)) {
                 square.classList.add('death')
-                square.classList.innerHTML = `<i class="fa-solid fa-bomb fa-beat" style="color: #000000;"></i>`
+                square.innerHTML = '<i class="fa-solid fa-bomb fa-beat" style="color: #000000;"></i>';
             } else {
                 square.classList.add('squarenew')
                 square.style.color = 'black';
