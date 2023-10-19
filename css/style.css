@@ -50,3 +50,7 @@ select{
 label{
     padding-right: 5px;
 }
+
+.death{
+    background-color: red;
+}

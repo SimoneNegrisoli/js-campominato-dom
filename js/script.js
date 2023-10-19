@@ -37,6 +37,34 @@ function campoMinatoGame() {
             const square = createSquare(i, numSquare);
             playground.appendChild(square);
         }
+
+        // mi ritorno bombs
+        const bombs = generateBombs(numSquare);
+        console.log(bombs)
+
+
+        // funzione per bombe
+        function generateBombs (numSquare){
+            // arrray vuoto
+            const bombs = [];
+
+            // ciclo while per farne una
+            while (bombs.length < 16){
+                const bomb = getRndInteg(1, numSquare);
+
+                if (!bombs.includes.bomb){
+                    bombs.push(bomb)
+                }
+            }
+
+            return bombs;
+        }
+
+
+
+
+
+
     }
 
     function createSquare(squareInd, numSquare) {
@@ -70,4 +98,6 @@ function campoMinatoGame() {
         }
         return numSquare;
     }
+
+
 }
