@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    border: 0;
+    padding: 0;
+}
+
+.playground{
+    width: 600px;
+    height: 600px;
+    background-color: rgb(4, 20, 42);
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.button-container{
+    margin: 0 auto;
+    text-align: center;
+}
+button{
+    transition: all 0.3s;
+}
+button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.square{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.squarenew{
+    background-color: aqua;
+}
