@@ -17,9 +17,15 @@
 .button-container{
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 button{
     transition: all 0.3s;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 10px;
 }
 button:hover{
     cursor: pointer;
@@ -27,8 +33,6 @@ button:hover{
 }
 
 .square{
-    width: calc(100% / 10);
-    height: calc(100% / 10);
     border: 1px solid white;
     display: flex;
     justify-content: center;
@@ -37,4 +41,12 @@ button:hover{
 
 .squarenew{
     background-color: aqua;
+}
+select{
+    border: 1px solid rgba(4, 20, 42, 0.527);
+    border-radius: 5px;
+    padding: 3px;
+}
+label{
+    padding-right: 5px;
 }
