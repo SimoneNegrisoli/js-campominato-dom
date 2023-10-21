@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 
-.playground{
+#playground{
     width: 600px;
     height: 600px;
     background-color: rgb(4, 20, 42);
@@ -13,14 +13,16 @@
     display: flex;
     flex-wrap: wrap;
 
+
 }
 
-.button-container{
+main{
     margin: 0 auto;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 button{
     transition: all 0.3s;
@@ -57,4 +59,27 @@ label{
 }
 h1{
     text-align: center;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#win{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: yellow;
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
