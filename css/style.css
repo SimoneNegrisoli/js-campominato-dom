@@ -5,6 +5,39 @@
     font-family: sans-serif;
 }
 
+.wrapper{
+    background-image: url('../img/bg-campo-minato.webp');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+header{
+    background-image: url('../img/bg-header.png');
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+
+}
+
+h1{
+color: white;
+font-family: 'Press Start 2P', system-ui;
+animation: moveUpDown 0.4s infinite alternate;
+}
+@keyframes moveUpDown {
+    0% {
+      transform: translateY(0); 
+    }
+    100% {
+      transform: translateY(-5px); 
+    }
+  }
+h2{
+font-family: 'Press Start 2P', system-ui;
+
+}
+
 #playground{
     width: 600px;
     height: 600px;
@@ -12,10 +45,68 @@
     margin: 50px auto;
     display: flex;
     flex-wrap: wrap;
-
-
+    position: relative;
+}
+.tank{
+    background-image: url('../img/tank.png');
+    background-size: contain;
+    background-color: transparent;
+    width: 80px;
+    height: 80px;
+    z-index: 100;
+    position: absolute;
+    top: 60%;
+    right: 50%;
+    animation: moveTank 15s ease-in infinite ;
 }
 
+@keyframes moveTank {
+    0%, 25% {
+        transform: translateX(-200px)rotateY(180deg);
+      }
+      50% {
+        transform: translateX(200px) rotateY(180deg);
+      }
+      50.1% {
+        transform: translateX(200px) rotateY(0deg);
+      }
+      75%, 100% {
+        transform: translateX(-200px) rotateY(0deg);
+      }
+  }
+.plane{
+    background-image: url('../img/plane.png');
+    background-size: contain;
+    background-color: transparent;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    animation: movePlane 10s infinite;
+}
+@keyframes movePlane {
+    0% {
+        transform: translateX(0) rotateY(0deg);
+    }
+    50% {
+        transform: translateX(-500px) rotateY(0deg);
+    }
+    50.1% {
+        transform: translateX(-500px) rotateY(180deg);
+    }
+    100%{
+        transform: translateX(0) rotateY(180deg);
+    }
+}
+  
+.bgstart{
+    background-image: url('../img/start.png');
+    width: 600px;
+    height: 600px;
+    background-size: cover;
+
+}
 main{
     margin: 0 auto;
     text-align: center;
@@ -43,7 +134,7 @@ button:hover{
 }
 
 .squarenew{
-    background-color: aqua;
+    background-color: rgb(138, 156, 139);
 }
 select{
     border: 1px solid rgba(4, 20, 42, 0.527);
@@ -62,9 +153,15 @@ h1{
 }
 
 footer{
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    background-image: url('../img/bg-footer.png');
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    color: white;
+    font-size: 1.2rem;
 }
 
 #win{
@@ -72,14 +169,15 @@ footer{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: yellow;
+    background-color: rgb(70, 83, 74);
     border-radius: 10px;
     padding: 10px;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
 }

@@ -82,7 +82,7 @@ function campoMinatoGame() {
         square.style.height = `calc(100% / ${squareWidth})`;
         square.style.color = 'white'
         square.innerHTML = content;
-        square.addEventListener("click", drawClick, );  //{ once: true }
+        square.addEventListener("click", drawClick,);  //{ once: true }
         return square;
     }
 
@@ -138,6 +138,10 @@ function campoMinatoGame() {
                 bombsArray.push(bomb);
             }
         }
+        bombsArray.sort(function (a, b) {
+            return a - b;
+        });
+
         console.log(bombsArray);
         return bombsArray;
 
@@ -158,13 +162,14 @@ function campoMinatoGame() {
                 return;
             } else {
                 message = `
-                <h1>Hai vinto</h1> 
+                <h2>Hai vinto</h2> 
+                <h5>Ottimo lavoro soldato <br> <i class="fa-solid fa-award me-1"></i> <i class="fa-solid fa-award me-1"></i> <i class="fa-solid fa-award"></i> </h5>
                 <p> Il tuo punteggio è: ${score}</p>
             `;
             }
         } else {
             message = `
-            <h1> Hai perso </h1
+            <h2> Hai perso  <i class="fa-solid fa-skull-crossbones fa-beat-fade"></i> </h2
             <p> Il tuo punteggio è: ${score}</p>
         `;
         }
